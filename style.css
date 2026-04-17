@@ -191,3 +191,23 @@ button:active::after {
   background: #ffd966;
   align-self: flex-end;
 }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, div {
+  user-select: none;
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,215,0,0.4), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}

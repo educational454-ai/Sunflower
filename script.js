@@ -39,6 +39,7 @@ function nextScreen() {
 
 function showMessage() {
   switchScreen("screen2", "screen3");
+  setTimeout(showChat, 300);
 }
 
 function finalScreen() {
@@ -95,4 +96,28 @@ function callMe() {
 
 function flowerClick() {
   alert("Sunflowers are nice… but not more than your smile 🌻😄");
+}
+
+const glow = document.createElement("div");
+glow.classList.add("cursor-glow");
+document.body.appendChild(glow);
+
+document.addEventListener("mousemove", (e) => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
+
+document.addEventListener("touchmove", (e) => {
+  glow.style.left = e.touches[0].clientX + "px";
+  glow.style.top = e.touches[0].clientY + "px";
+});
+
+function showChat() {
+  const msgs = document.querySelectorAll(".msg");
+  msgs.forEach((msg, index) => {
+    msg.style.opacity = 0;
+    setTimeout(() => {
+      msg.style.opacity = 1;
+    }, index * 800);
+  });
 }

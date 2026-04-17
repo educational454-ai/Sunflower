@@ -39,7 +39,7 @@ function nextScreen() {
 
 function showMessage() {
   switchScreen("screen2", "screen3");
-  setTimeout(showChat, 1000);
+  setTimeout(showChat, 700);
 }
 
 function finalScreen() {

@@ -8,19 +8,19 @@
 </head>
 <body>
 
-<div class="screen active" id="screen1" onclick="nextScreen()">
+<div class="screen active" id="screen1">
   <h1 id="typing"></h1>
-  <button onclick="playMusic()">Play something 🌻</button>
+  <button onclick="nextScreen()">Tap to begin 🌻</button>
   <p>I made something for you...</p>
 </div>
 
-<div class="screen" id="screen2" onclick="showMessage()">
+<div class="screen" id="screen2">
   <img src="sunflower.png" class="flower" ondblclick="showSecret()">
   <p>I heard you like sunflowers 🌻</p>
-  <button onclick="showMessage()">Tap me</button>
+  <button onclick="showMessage()">Next 😄</button>
 </div>
 
-<div class="screen" id="screen3" onclick="finalScreen()">
+<div class="screen" id="screen3">
   <div class="chat">
     <div class="msg left">Hey 🙂</div>
     <div class="msg right">Hmm?</div>
@@ -29,17 +29,17 @@
     <div class="msg left">Yeah… just wanted to make you smile 😄</div>
   </div>
 
-  <button onclick="finalScreen()">Next</button>
+  <button onclick="finalScreen()">Next ➡️</button>
 </div>
 
-<div class="screen" id="screen4" onclick="showFinal()">
+<div class="screen" id="screen4">
   <div id="flowers"></div>
   <h2>And honestly…</h2>
   <p>I didn’t expect our conversations to become my favorite part of the day 😄</p>
   <button onclick="showFinal()">One more thing 👀</button>
 </div>
 
-<div class="screen" id="screen5" onclick="callMe()">
+<div class="screen" id="screen5">
   <h1 style="font-size:50px;">🌻💛🌻</h1>
   <p style="font-size:20px;">Bas ek smile chahiye thi tumse 😄</p>
   <button onclick="callMe()">Call me maybe? 📞</button>

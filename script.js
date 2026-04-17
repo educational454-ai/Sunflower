@@ -125,22 +125,25 @@ function showChat() {
 
 let pressTimer;
 
-document.addEventListener("touchstart", function () {
-  pressTimer = setTimeout(showSecret, 2000); // 2 sec hold
+const flower = document.getElementById("secretFlower");
+
+flower.addEventListener("touchstart", () => {
+  pressTimer = setTimeout(showSecret, 2000);
 });
 
-document.addEventListener("touchend", function () {
+flower.addEventListener("touchend", () => {
+  clearTimeout(pressTimer);
+});
+
+// desktop support
+flower.addEventListener("mousedown", () => {
+  pressTimer = setTimeout(showSecret, 2000);
+});
+
+flower.addEventListener("mouseup", () => {
   clearTimeout(pressTimer);
 });
 
 function showSecret() {
   alert("Okay… one secret 🤫\n\nI kinda like talking to you more than I admit 🌻😄");
 }
-
-document.addEventListener("mousedown", function () {
-  pressTimer = setTimeout(showSecret, 2000);
-});
-
-document.addEventListener("mouseup", function () {
-  clearTimeout(pressTimer);
-});

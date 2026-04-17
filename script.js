@@ -39,7 +39,7 @@ function nextScreen() {
 
 function showMessage() {
   switchScreen("screen2", "screen3");
-  setTimeout(showChat, 300);
+  setTimeout(showChat, 400);
 }
 
 function finalScreen() {
@@ -114,10 +114,11 @@ document.addEventListener("touchmove", (e) => {
 
 function showChat() {
   const msgs = document.querySelectorAll(".msg");
+
   msgs.forEach((msg, index) => {
-    msg.style.opacity = 0;
     setTimeout(() => {
       msg.style.opacity = 1;
-    }, index * 800);
+      msg.style.transform = "translateY(0)";
+    }, index * 700);  // 👈 delay between messages
   });
 }

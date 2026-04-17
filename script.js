@@ -10,15 +10,7 @@ function typeEffect() {
   }
 }
 
-// 🌻 Smooth Fade-in + Typing Start
-window.onload = () => {
-  document.body.style.opacity = 0;
-  document.body.style.transition = "opacity 1.5s";
-  document.body.style.opacity = 1;
-  typeEffect();
-};
-
-// 🌻 Screen Transition System
+// 🌻 Screen Transition
 function switchScreen(current, next) {
   const currentEl = document.getElementById(current);
   const nextEl = document.getElementById(next);
@@ -32,14 +24,14 @@ function switchScreen(current, next) {
   }, 300);
 }
 
-// 🌻 Navigation Functions
+// 🌻 Navigation
 function nextScreen() {
   switchScreen("screen1", "screen2");
 }
 
 function showMessage() {
   switchScreen("screen2", "screen3");
-  setTimeout(showChat, 700);
+  setTimeout(showChat, 500);
 }
 
 function finalScreen() {
@@ -51,7 +43,7 @@ function showFinal() {
   switchScreen("screen4", "screen5");
 }
 
-// 🌻 Flower Explosion Effect
+// 🌻 Flower Explosion
 function createFlowers() {
   const container = document.getElementById("flowers");
   container.innerHTML = "";
@@ -69,6 +61,7 @@ function createFlowers() {
   }
 }
 
+// 🌻 Floating Flowers
 function floatingFlowers() {
   for (let i = 0; i < 10; i++) {
     let flower = document.createElement("div");
@@ -82,22 +75,29 @@ function floatingFlowers() {
   }
 }
 
-window.onload = () => {
-  document.body.style.opacity = 0;
-  document.body.style.transition = "opacity 1.5s";
-  document.body.style.opacity = 1;
-  typeEffect();
-  floatingFlowers(); // 👈 add this
-};
+// 🌻 Chat Animation
+function showChat() {
+  const msgs = document.querySelectorAll(".msg");
 
+  msgs.forEach((msg, index) => {
+    setTimeout(() => {
+      msg.style.opacity = 1;
+      msg.style.transform = "translateY(0)";
+    }, index * 700);
+  });
+}
+
+// 🌻 Secret (double tap)
+function showSecret() {
+  alert("Okay… one secret 🤫\n\nI kinda like talking to you more than I admit 🌻😄");
+}
+
+// 🌻 Call Button
 function callMe() {
-  window.location.href = "tel:+911234567890"; // 👈 apna number daal
+  window.location.href = "tel:+911234567890"; // apna number daal
 }
 
-function flowerClick() {
-  alert("Sunflowers are nice… but not more than your smile 🌻😄");
-}
-
+// 🌻 Cursor Glow
 const glow = document.createElement("div");
 glow.classList.add("cursor-glow");
 document.body.appendChild(glow);
@@ -112,19 +112,7 @@ document.addEventListener("touchmove", (e) => {
   glow.style.top = e.touches[0].clientY + "px";
 });
 
-function showChat() {
-  const msgs = document.querySelectorAll(".msg");
-
-  msgs.forEach((msg, index) => {
-    setTimeout(() => {
-      msg.style.opacity = 1;
-      msg.style.transform = "translateY(0)";
-    }, index * 700);  // 👈 delay between messages
-  });
-}
-
-let pressTimer;
-
+// 🌻 SINGLE onload (FINAL FIX)
 window.onload = () => {
   document.body.style.opacity = 0;
   document.body.style.transition = "opacity 1.5s";
@@ -132,30 +120,4 @@ window.onload = () => {
 
   typeEffect();
   floatingFlowers();
-
-  // 👇 IMPORTANT: flower select after load
-  const flower = document.getElementById("secretFlower");
-
-  if (flower) {
-    flower.addEventListener("touchstart", () => {
-      pressTimer = setTimeout(showSecret,1200);
-    });
-
-    flower.addEventListener("touchend", () => {
-      clearTimeout(pressTimer);
-    });
-
-    // desktop support
-    flower.addEventListener("mousedown", () => {
-      pressTimer = setTimeout(showSecret, 1200);
-    });
-
-    flower.addEventListener("mouseup", () => {
-      clearTimeout(pressTimer);
-    });
-  }
 };
-
-function showSecret() {
-  alert("Okay… one secret 🤫\n\nI kinda like talking to you more than I admit 🌻😄");
-}

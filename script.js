@@ -122,3 +122,25 @@ function showChat() {
     }, index * 700);  // 👈 delay between messages
   });
 }
+
+let pressTimer;
+
+document.addEventListener("touchstart", function () {
+  pressTimer = setTimeout(showSecret, 2000); // 2 sec hold
+});
+
+document.addEventListener("touchend", function () {
+  clearTimeout(pressTimer);
+});
+
+function showSecret() {
+  alert("Okay… one secret 🤫\n\nI kinda like talking to you more than I admit 🌻😄");
+}
+
+document.addEventListener("mousedown", function () {
+  pressTimer = setTimeout(showSecret, 2000);
+});
+
+document.addEventListener("mouseup", function () {
+  clearTimeout(pressTimer);
+});

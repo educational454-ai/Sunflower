@@ -138,7 +138,7 @@ window.onload = () => {
 
   if (flower) {
     flower.addEventListener("touchstart", () => {
-      pressTimer = setTimeout(showSecret, 2000);
+      pressTimer = setTimeout(showSecret,1200);
     });
 
     flower.addEventListener("touchend", () => {
@@ -147,7 +147,7 @@ window.onload = () => {
 
     // desktop support
     flower.addEventListener("mousedown", () => {
-      pressTimer = setTimeout(showSecret, 2000);
+      pressTimer = setTimeout(showSecret, 1200);
     });
 
     flower.addEventListener("mouseup", () => {

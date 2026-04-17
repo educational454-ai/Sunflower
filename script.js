@@ -125,24 +125,36 @@ function showChat() {
 
 let pressTimer;
 
-const flower = document.getElementById("secretFlower");
+window.onload = () => {
+  document.body.style.opacity = 0;
+  document.body.style.transition = "opacity 1.5s";
+  document.body.style.opacity = 1;
 
-flower.addEventListener("touchstart", () => {
-  pressTimer = setTimeout(showSecret, 2000);
-});
+  typeEffect();
+  floatingFlowers();
 
-flower.addEventListener("touchend", () => {
-  clearTimeout(pressTimer);
-});
+  // 👇 IMPORTANT: flower select after load
+  const flower = document.getElementById("secretFlower");
 
-// desktop support
-flower.addEventListener("mousedown", () => {
-  pressTimer = setTimeout(showSecret, 2000);
-});
+  if (flower) {
+    flower.addEventListener("touchstart", () => {
+      pressTimer = setTimeout(showSecret, 2000);
+    });
 
-flower.addEventListener("mouseup", () => {
-  clearTimeout(pressTimer);
-});
+    flower.addEventListener("touchend", () => {
+      clearTimeout(pressTimer);
+    });
+
+    // desktop support
+    flower.addEventListener("mousedown", () => {
+      pressTimer = setTimeout(showSecret, 2000);
+    });
+
+    flower.addEventListener("mouseup", () => {
+      clearTimeout(pressTimer);
+    });
+  }
+};
 
 function showSecret() {
   alert("Okay… one secret 🤫\n\nI kinda like talking to you more than I admit 🌻😄");

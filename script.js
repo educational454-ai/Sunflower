@@ -94,13 +94,19 @@ function showSecret() {
 
 // 🌻 Call Button
 function callMe() {
-  const url = "whatsapp://send?phone=919975966197&text=Hey%20just%20saw%20this%20%F0%9F%8C%BB%F0%9F%98%84";
-  
-  window.location.href = url;
+  const phone = "919975966197";
+  const message = "Hey just saw this 🌻😄";
 
+  // Encode message properly
+  const encodedMsg = encodeURIComponent(message);
+
+  // Try WhatsApp app
+  window.location.href = `whatsapp://send?phone=${phone}&text=${encodedMsg}`;
+
+  // Fallback after delay (browser → WhatsApp)
   setTimeout(() => {
-    window.open("https://wa.me/919975966197", "_blank");
-  }, 1500);
+    window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodedMsg}`, "_blank");
+  }, 1200);
 }
 
 // 🌻 Cursor Glow

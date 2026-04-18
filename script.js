@@ -94,7 +94,7 @@ function showSecret() {
 
 // 🌻 Call Button
 function callMe() {
-  window.location.href = "tel:+911234567890"; // apna number daal
+  window.open("https://wa.me/919975966197?text=Hey%20just%20saw%20this%20🌻😄", "_blank");
 }
 
 // 🌻 Cursor Glow

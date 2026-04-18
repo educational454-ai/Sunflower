@@ -94,7 +94,7 @@ function showSecret() {
 
 // 🌻 Call Button
 function callMe() {
-  window.open("https://wa.me/919975966197?text=Hey%20just%20saw%20this%20🌻😄", "_blank");
+  window.open("https://wa.me/919975966197?text=Hey...%20just%20saw%20this%20%F0%9F%8C%BB%F0%9F%98%84%20and%20it%20was%20cute", "_blank");
 }
 
 // 🌻 Cursor Glow
